@@ -1,0 +1,116 @@
+.landing-page-wrapper {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+}
+
+.landing-page-wrapper .card {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  background-color: black;
+}
+
+.landing-page-wrapper .content {
+  position: absolute;
+  width: 60%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+}
+
+.landing-page-wrapper h2 {
+  margin-bottom: 20px;
+  text-transform: capitalize;
+}
+
+.landing-page-wrapper p {
+  margin-bottom: 30px;
+  text-transform: capitalize;
+}
+
+.landing-page-wrapper a {
+  display: inline-block;
+  padding: 10px 10px;
+  border: 1px solid white;
+  text-decoration: none;
+  color: white;
+  transition: 0.5s;
+  text-transform: capitalize;
+}
+
+.landing-page-wrapper a:hover {
+  color: black;
+  background-color: white;
+}
+
+.landing-page-wrapper img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.5s;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.landing-page-wrapper img:hover {
+  clip-path: polygon(100% 100%, 100% 0, 100% 100%, 0% 100%);
+}
+
+.landing-page-wrapper .main {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+}
+
+.menu-bar {
+  /* background-color: #333; */
+  padding: 10px 20px;
+  position: fixed; /* Sticks to the top */
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  display: flex;
+  justify-content: flex-start;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.menu-bar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.menu-bar ul li {
+  margin-right: 20px;
+}
+
+.menu-bar ul li a {
+  text-decoration: none;
+  color: rgb(14, 14, 14);
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.menu-bar ul li a:hover {
+  color: #00bcd4;
+}
+
+.heading {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 2rem;
+  color: #333;
+}

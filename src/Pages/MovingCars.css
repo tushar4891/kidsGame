@@ -1,0 +1,152 @@
+/* Game Container */
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f0f8ff;
+}
+
+/* Title */
+.game-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* Rectangle */
+.rectangle {
+  width: 90%;
+  max-width: 1000px;
+  height: 110%;
+  border: 5px solid #555;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Scene */
+.scene {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: linear-gradient(#a6d8ff, #fff, #fff);
+}
+
+/* Sun */
+.sun {
+  position: absolute;
+  top: 100px;
+  left: 55%;
+  width: 100px;
+  height: 100px;
+  background: #ffffff;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 50px #ffffff;
+  cursor: pointer;
+  transition: 0.2s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: auto;
+}
+
+.sun-text {
+  color: #000;
+  font-size: 0.8em;
+  font-weight: bold;
+  text-shadow: 0 0 5px #fff;
+  pointer-events: none;
+}
+
+/* Background */
+.bg {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 280px;
+  background: url(../../public/bg.png);
+  animation: animateBg 25s linear infinite;
+  background-size: 1500px;
+  background-repeat: repeat-x;
+}
+
+@keyframes animateBg {
+  0% {
+    background-position-x: 0px;
+  }
+  100% {
+    background-position-x: -1500px;
+  }
+}
+
+/* Cars */
+.car1 {
+  position: absolute;
+  left: -200px;
+  bottom: 20px;
+  max-width: 200px;
+  z-index: 1;
+  animation: car1 18s linear infinite;
+}
+
+.car2 {
+  position: absolute;
+  right: -200px;
+  bottom: 50px;
+  max-width: 200px;
+  animation: car2 12s linear infinite;
+}
+
+@keyframes car1 {
+  0% {
+    transform: translateX(0px);
+  }
+  90%,
+  100% {
+    transform: translateX(calc(100vw + 200px));
+  }
+}
+
+@keyframes car2 {
+  0% {
+    transform: translateX(0px) rotateY(180deg);
+  }
+  90%,
+  100% {
+    transform: translateX(calc(-100vw - 200px)) rotateY(180deg);
+  }
+}
+
+.scene.night {
+  background: #222833;
+}
+
+.scene.night .sun {
+  left: 45%;
+  box-shadow: 0 0 0 #fff;
+}
+
+.scene.night .sun::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: 20px;
+  width: 100%;
+  height: 100%;
+  background: #222833;
+  border-radius: 50%;
+}
